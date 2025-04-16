@@ -13,7 +13,7 @@
     }
     header {
       text-align: center;
-      padding: 50px 20px;
+      padding: 60px 20px;
       background: linear-gradient(90deg, #43cea2, #185a9d);
       color: #fff;
     }
@@ -47,7 +47,7 @@
     }
     section {
       padding: 50px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
     .testimonials, .plans {
@@ -139,7 +139,7 @@
       100% { transform: rotateY(360deg); }
     }
 
-    /* 3D Stock Animation Section */
+    /* 3D Stock Cube */
     .live-market-animated {
       padding: 60px 20px;
       background: radial-gradient(circle at center, #1e1e1e, #0d0d0d);
@@ -199,6 +199,43 @@
       0% { text-shadow: 0 0 5px #ff5252; }
       100% { text-shadow: 0 0 15px #ff5252; }
     }
+
+    /* Heatmap and Sentiment */
+    .heatmap-section {
+      background-color: #1c1c1c;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .heatmap-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    .heatmap-box {
+      width: 120px;
+      height: 80px;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .green { background-color: #2e7d32; }
+    .red { background-color: #c62828; }
+    .sentiment {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      padding: 15px;
+      background: #263238;
+      border-left: 5px solid #4caf50;
+      border-radius: 10px;
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
@@ -226,6 +263,19 @@
     </div>
   </section>
 
+  <section class="heatmap-section">
+    <h2>Market Mood Today</h2>
+    <div class="heatmap-grid">
+      <div class="heatmap-box green">TCS<br>+2.1%</div>
+      <div class="heatmap-box red">HDFC Bank<br>-1.3%</div>
+      <div class="heatmap-box green">LT<br>+0.9%</div>
+      <div class="heatmap-box red">Adani Ent<br>-2.5%</div>
+      <div class="heatmap-box green">ITC<br>+1.6%</div>
+      <div class="heatmap-box red">Axis Bank<br>-0.7%</div>
+    </div>
+    <div class="sentiment">Market Sentiment: <strong style="color:#4caf50;">Bullish</strong></div>
+  </section>
+
   <section>
     <h2>Why Traders Love Us</h2>
     <div class="testimonials">
@@ -239,18 +289,9 @@
   <section>
     <h2>Our Plans</h2>
     <div class="plans">
-      <div class="plan">
-        <h3>Index Pack</h3>
-        <p>Monthly: ₹9,999 | Yearly: ₹59,999</p>
-      </div>
-      <div class="plan">
-        <h3>Equity Option Pack</h3>
-        <p>Monthly: ₹9,999 | Yearly: ₹59,999</p>
-      </div>
-      <div class="plan">
-        <h3>Combo Pack</h3>
-        <p>Monthly: ₹24,999 | Half Yearly: ₹59,999 | Yearly: ₹99,999</p>
-      </div>
+      <div class="plan"><h3>Index Pack</h3><p>Monthly: ₹9,999 | Yearly: ₹59,999</p></div>
+      <div class="plan"><h3>Equity Option Pack</h3><p>Monthly: ₹9,999 | Yearly: ₹59,999</p></div>
+      <div class="plan"><h3>Combo Pack</h3><p>Monthly: ₹24,999 | Half Yearly: ₹59,999 | Yearly: ₹99,999</p></div>
     </div>
   </section>
 
@@ -259,11 +300,6 @@
     <p><strong>UPI ID:</strong> stockview77@ybl</p>
     <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="Pay Icon" style="height: 30px;">
     <a href="https://razorpay.me/@stockview5947" target="_blank" style="font-size: 16px; font-weight: 600;"> Tap on the icon and Pay Here</a>
-  </section>
-
-  <section>
-    <h2>Live Market Chart</h2>
-    <iframe src="https://s.tradingview.com/widgetembed/?symbol=NSE%3ANIFTY&interval=5&theme=dark&style=1&timezone=Asia%2FKolkata&studies=%5B%22MAExp@tv-basicstudies%22%5D&study_overrides=%7B%22MAExp.length%22%3A9%7D&hide_legend=true&withdateranges=1&hideideas=1" width="100%" height="500" frameborder="0" allowtransparency="true" scrolling="no"></iframe>
   </section>
 
   <section>
