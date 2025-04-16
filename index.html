@@ -139,7 +139,6 @@
       100% { transform: rotateY(360deg); }
     }
 
-    /* 3D Stock Cube */
     .live-market-animated {
       padding: 60px 20px;
       background: radial-gradient(circle at center, #1e1e1e, #0d0d0d);
@@ -200,7 +199,6 @@
       100% { text-shadow: 0 0 15px #ff5252; }
     }
 
-    /* Heatmap and Sentiment */
     .heatmap-section {
       background-color: #1c1c1c;
       padding: 40px 20px;
@@ -298,14 +296,13 @@
   <section>
     <h2>Payment</h2>
     <p><strong>UPI ID:</strong> stockview77@ybl</p>
-    <img src="https://cdn-icons-png.flaticon.com/512/747/747545.png" alt="Pay Icon" style="height: 30px;">
-    <a href="https://razorpay.me/@stockview5947" target="_blank" style="font-size: 16px; font-weight: 600;"> Tap on the icon and Pay Here</a>
+    <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Wallet Icon" style="height: 30px;">
+    <a href="https://razorpay.me/@stockview5947" target="_blank" style="font-size: 16px; font-weight: 600;">  Pay Here</a>
   </section>
 
   <section>
     <h2>Top Stocks</h2>
     <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-      
       <img src="https://logo.clearbit.com/tatamotors.com" alt="Tata Motors" class="stock-logo">
       <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" class="stock-logo">
       <img src="https://logo.clearbit.com/icicibank.com" alt="ICICI Bank" class="stock-logo">
@@ -314,10 +311,10 @@
 
   <section id="get-started">
     <h2>Get Started</h2>
-    <form onsubmit="alert('Thanks! We will contact you soon.'); return false;">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email" required />
-      <input type="tel" placeholder="Phone Number" required />
+    <form onsubmit="sendToWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Full Name" required />
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="tel" id="phone" placeholder="Phone Number" required />
       <button type="submit">Submit</button>
     </form>
     <div class="wa-tg">
@@ -329,6 +326,20 @@
   <div class="footer">
     © 2025 Stock View. All rights reserved.
   </div>
+
+  <script>
+    function sendToWhatsApp() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+
+      var message = `New Lead from Stock View:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}`;
+      var whatsappNumber = "918959677396";
+      var whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+      window.open(whatsappURL, '_blank');
+    }
+  </script>
 
 </body>
 </html>
