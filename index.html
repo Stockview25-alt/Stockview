@@ -262,21 +262,43 @@
     </div>
   </section>
 <!-- Stylish Section: FII/DII Data -->
-<section style="padding: 40px 20px; background: #000000; text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 20px;">FII / DII Activity</h2>
-  <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-    <div style="background: #e0f7fa; padding: 20px 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <h3 style="margin: 0; color: #006064;">FII</h3>
-      <p style="font-size: 1.2rem; margin: 5px 0; color: black;">₹1,345 Cr</p>
-      <span style="color: green;">Net Buy</span>
+<section id="fii-dii-live" style="padding: 40px 20px; background: #000; text-align: center; color: #fff;">
+  <h2>FII / DII Live Activity</h2>
+  <div id="fii-dii-container" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+    <div id="fii-box" style="background: #e0f7fa; color: black; padding: 20px 30px; border-radius: 15px;">
+      <h3>FII</h3>
+      <p id="fii-value">Loading...</p>
+      <span id="fii-status"></span>
     </div>
-    <div style="background: #fff3e0; padding: 20px 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-      <h3 style="margin: 0; color: #e65100;">DII</h3>
-      <p style="font-size: 1.2rem; margin: 5px 0; color : black;">₹980 Cr</p>
-      <span style="color: red;">Net Sell</span>
+    <div id="dii-box" style="background: #fff3e0; color: black; padding: 20px 30px; border-radius: 15px;">
+      <h3>DII</h3>
+      <p id="dii-value">Loading...</p>
+      <span id="dii-status"></span>
     </div>
   </div>
 </section>
+
+<script>
+  function simulateLiveFiiDiiData() {
+    // Simulated random data
+    const fii = (Math.random() * 2000 - 1000).toFixed(2);
+    const dii = (Math.random() * 2000 - 1000).toFixed(2);
+
+    const fiiBox = document.getElementById('fii-box');
+    const diiBox = document.getElementById('dii-box');
+
+    document.getElementById('fii-value').innerText = `₹${Math.abs(fii)} Cr`;
+    document.getElementById('fii-status').innerText = fii >= 0 ? "Net Buy" : "Net Sell";
+    document.getElementById('fii-status').style.color = fii >= 0 ? "green" : "red";
+
+    document.getElementById('dii-value').innerText = `₹${Math.abs(dii)} Cr`;
+    document.getElementById('dii-status').innerText = dii >= 0 ? "Net Buy" : "Net Sell";
+    document.getElementById('dii-status').style.color = dii >= 0 ? "green" : "red";
+  }
+
+  simulateLiveFiiDiiData(); // Initial load
+  setInterval(simulateLiveFiiDiiData, 5000); // Refresh every 5 sec
+</script>
   <section class="heatmap-section">
     <h2>Market Mood Today</h2>
     <div class="heatmap-grid">
